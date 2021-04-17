@@ -56,7 +56,7 @@ public class PizzaShopService {
     }
 
     // TODO - implementar adapter para unificar pizzas vindas das APIs Damenos e PizzaHot num único método getPizzas()
-    // TODO - public List<PizzaShopPizza> getPizzas() {}
+    // TODO - public List<Pizza> getPizzas() {}
 
     public List<DamenosPizza> getPizzasDamenos() {
         return damenosService.getPizzas();
