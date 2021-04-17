@@ -1,5 +1,6 @@
 package br.edu.ifpb.padroes.api.pizzahot;
 
+import br.edu.ifpb.padroes.api.pizzahot.proxy.PizzaHotService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
@@ -8,15 +9,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// TODO - adicionar proxy de cache para evitar leitura do json a cada chamada do método
-public class PizzaHotService {
+public class PizzaHotServiceImpl implements PizzaHotService {
 
-    private Logger logger = Logger.getLogger(PizzaHotService.class.getName());
+    private Logger logger = Logger.getLogger(PizzaHotServiceImpl.class.getName());
 
     public List<PizzaHotPizza> getPizzas() {
-
-        // TODO - adicionar proxy de cache para evitar leitura do json a cada chamada do método
-
         List<PizzaHotPizza> pizzas = new ArrayList<>();
         ObjectMapper objectMapper = new ObjectMapper();
         try {
@@ -25,7 +22,6 @@ public class PizzaHotService {
             logger.log(Level.SEVERE, "Fail to read json", e);
         }
         return pizzas;
-
     }
 
 }

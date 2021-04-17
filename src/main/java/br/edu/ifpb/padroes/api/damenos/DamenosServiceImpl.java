@@ -1,5 +1,6 @@
 package br.edu.ifpb.padroes.api.damenos;
 
+import br.edu.ifpb.padroes.api.damenos.proxy.DamenosService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
@@ -8,10 +9,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// TODO - adicionar proxy de cache para evitar leitura do json a cada chamada do método
-public class DamenosService {
+public class DamenosServiceImpl implements DamenosService {
 
-    private Logger logger = Logger.getLogger(DamenosService.class.getName());
+    private Logger logger = Logger.getLogger(DamenosServiceImpl.class.getName());
 
     public List<DamenosPizza> getPizzas() {
         List<DamenosPizza> pizzas = new ArrayList<>();
